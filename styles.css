@@ -1,0 +1,40 @@
+div {
+    border: 1px solid black;
+}
+
+#header {
+    text-align: center;
+    margin: auto;
+    width: 45%;
+}
+
+#arena {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+}
+button {
+    height: 20px;
+}
+#hostBox {
+    
+    width: 25%;
+    height: 100%;
+}
+#monster {
+    width: 25%;
+    height: 100%;
+}
+
+#bottomText {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+#textResponse {
+    width: 25%;
+}
+#cardDetails {
+    width: 25%;
+}
