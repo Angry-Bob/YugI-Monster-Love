@@ -11,16 +11,22 @@ div {
 #arena {
     display: flex;
     justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0);
     align-items: center;
     height: 300px;
+    z-index: -1;
 }
 button {
     height: 20px;
 }
 #hostBox {
-    
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
     width: 25%;
     height: 100%;
+    
 }
 #monster {
     width: 25%;
@@ -29,16 +35,59 @@ button {
 
 #bottomText {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 10px;
+    height: 150px;
+    width: 100%;
 }
 #textResponse {
-    width: 25%;
+    width: 50%;
 }
-#cardDetails {
-    width: 25%;
-}
+
 img {
     height: 100%;
     width: 100%;
+    position: relative;
+ 
+}
+
+
+#question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+.choice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22.5%;
+}
+#startScreen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+#yugiLogo {
+    background-color: 	#590d8568;
+    margin: 5% 0;
+}
+#startScreen {
+    background-image: url(https://wallpapers.com/images/high/yugioh-charming-magician-girl-5l95woktzjpjakr4.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.button2 {
+    width: 20%;
+    height: 5%;
+    border: none;
+    margin: 30px 0px 0px 10px;
+    background-color: #590d8568;
+    
+}
+.name {
+    background-color: #590d8568;
+    margin: 15% 0;
 }
