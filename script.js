@@ -1,173 +1,24 @@
 //Button to initialize game
 const button1 = document.querySelector("#startGame")
 
-
 //Questions as objects in an array for the user to answer
 const questions = [
     {
         question: "Which of these colors do your prefer?",
         response: [
-                    {answer: "Red", value: 3},
-                    {answer: "Pink", value: 3},
+                    {answer: "Red", value: 1},
+                    {answer: "Pink", value: 2},
                     {answer: "Yellow", value: 3}
         ]
     },{
-        question: "Of which food might you be a fan?",
+        question: "Whats your name",
         response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-            question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    },{
-        question: "Of which food might you be a fan?",
-        response: [
- 
-                    {answer: "Spaghetti", value: 3},
-                    {answer: "Baked fish", value: 3},
-                    {answer: "Chicken Tendies", value: 3}
-                ]
-    }]
-
-    
-
+                    {answer: "pete", value: 1},
+                    {answer: "Bud", value: 2},
+                    {answer: "Carl", value: 3}
+        ]
+    },
+]
 
 //Event listener function that commences upon button1 being pressed
 
@@ -179,6 +30,7 @@ button1.addEventListener("click", async () => {
 
     const monster = document.querySelector(".monsterPic")
     const host = document.querySelector(".hostBox")
+    const weevil = document.querySelector(".weevil")
     const monstArr = []
     const response2 = response.data.data
 
@@ -187,30 +39,25 @@ button1.addEventListener("click", async () => {
         if (response2[i].name === 'Dark Magician Girl' || response2[i].name === 'Harpie Lady' || response2[i].name === 'Elemental HERO Burstinatrix' || response2[i].name === 'Amazoness Queen' || response2[i].name === 'Elemental HERO Neos' || response2[i].name === 'SPYRAL Super Agent' || response2[i].name === 'Dhampir Vampire Sheridan' || response2[i].name === 'Ancient Gear Golem') {
             x = response2[i].card_images[0].image_url_cropped
             monstArr.push(x)
-            monster.setAttribute('src', monstArr[5])
-            host.setAttribute('src', "kisspng-yugi-mutou-yami-yugi-yu-gi-oh-duel-links-yu-gi-oh-yu-5addf130a789d7.3981810715244946406863.png")
+            weevil.setAttribute('src', "clipart905265.png")
+            host.setAttribute('src', "clipart1246641.png")
         }
     }
-
-    let dmg = 0;
-    let ehb = 0;
-    let hl = 0;
-
-
-
 
     const question = document.querySelector("#question")
     const choices = Array.from(document.querySelectorAll(".choice"))
     let currentQuestion = {}
     
    
-    const questionIndex = Math.floor(Math.random() * questions.length)
+    let questionIndex = Math.floor(Math.random() * questions.length)
+    
     currentQuestion = questions[questionIndex]
-    const choice1 = document.querySelector("#choice1")
-    const choice2 = document.querySelector("#choice2")
-    const choice3 = document.querySelector("#choice3")
+    questions.splice(questionIndex, 1)
+    const choice1 = document.querySelector("#choice0")
+    const choice2 = document.querySelector("#choice1")
+    const choice3 = document.querySelector("#choice2")
 
-
+    // console.log(currentQuestion.response[])
 
     question.innerHTML = currentQuestion.question
     choice1.innerHTML = currentQuestion.response[0].answer
@@ -222,23 +69,43 @@ button1.addEventListener("click", async () => {
     ansButton = document.querySelectorAll(".choice")
     console.log(ansButton)
 
+    let dmg = 0;
+    let ehb = 0;
+    let hl = 0;
+    let aq = 0;
+    let ehn = 0;
+    let ssa = 0;
+    let dvs = 0;
+
 
     choices.forEach(choice => {
     choice.addEventListener("click", evt => {
-        console.log('working')
+        if (questions.length === 0) {
+            if (dmg === 2) {
+                monster.setAttribute('src', monstArr[5])
+            } else {
+                return
+            }
+            return
+        }
+        let id = evt.target.id[evt.target.id.length - 1]
+        if (id === '0') dmg += currentQuestion.response[id].value 
+        
+        if (id === '1') dmg += currentQuestion.response[id].value
+        
+        if (id === '2') dmg += currentQuestion.response[id].value
+
+        questionIndex = Math.floor(Math.random() * questions.length)   
+        currentQuestion = questions[questionIndex]
+        question.innerHTML = currentQuestion.question
+        choice1.innerHTML = currentQuestion.response[0].answer
+        choice2.innerHTML = currentQuestion.response[1].answer
+        choice3.innerHTML = currentQuestion.response[2].answer
+        questions.splice(questionIndex, 1)
     })
- 
-    
+
+
+
 })
-
-
-
-
-console.log(dmg)
-
-
-
-
-
 })
 
