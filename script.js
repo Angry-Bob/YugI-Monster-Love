@@ -1,14 +1,24 @@
 //Button to initialize game
 const button1 = document.querySelector("#startGame")
 
+
+let dmg = 0;
+let ehb = 0;
+let hl = 0;
+let aq = 0;
+let ehn = 0;
+let ssa = 0;
+let dvs = 0;
+
+
 //Questions as objects in an array for the user to answer
 const questions = [
     {
         question: "Which of these colors do your prefer?",
         response: [
-                    {answer: "Red", value: 1},
-                    {answer: "Pink", value: 2},
-                    {answer: "Yellow", value: 3}
+                    {answer: "Red", value: ehb += 1},
+                    {answer: "Pink", value: dmg += 2},
+                    {answer: "Yellow", value: dvs += 3}
         ]
     },{
         question: "Whats your name",
@@ -57,7 +67,6 @@ button1.addEventListener("click", async () => {
     const choice2 = document.querySelector("#choice1")
     const choice3 = document.querySelector("#choice2")
 
-    // console.log(currentQuestion.response[])
 
     question.innerHTML = currentQuestion.question
     choice1.innerHTML = currentQuestion.response[0].answer
@@ -89,11 +98,11 @@ button1.addEventListener("click", async () => {
             return
         }
         let id = evt.target.id[evt.target.id.length - 1]
-        if (id === '0') dmg += currentQuestion.response[id].value 
+        if (id === '0') currentQuestion.response[id].value 
         
-        if (id === '1') dmg += currentQuestion.response[id].value
+        if (id === '1') currentQuestion.response[id].value
         
-        if (id === '2') dmg += currentQuestion.response[id].value
+        if (id === '2') currentQuestion.response[id].value
 
         questionIndex = Math.floor(Math.random() * questions.length)   
         currentQuestion = questions[questionIndex]
@@ -102,9 +111,10 @@ button1.addEventListener("click", async () => {
         choice2.innerHTML = currentQuestion.response[1].answer
         choice3.innerHTML = currentQuestion.response[2].answer
         questions.splice(questionIndex, 1)
+        console.log(dmg)
     })
 
-
+    
 
 })
 })
