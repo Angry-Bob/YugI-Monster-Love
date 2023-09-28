@@ -11,14 +11,6 @@ let ssa = 0;
 let dvs = 0; 
 let agg = 0;
 
-
-
-
-
-
-
-
-
 let variables = [dmg,ehb,hl,aq,ehn,ssa,dvs,agg]
 
 //Questions as objects in an array for the user to answer
@@ -511,13 +503,6 @@ button1.addEventListener("click", async () => {
                 }
             }
             
-
-           
-            
-
-    
-
-
             if (questions.length === 0) {
                 for (let i = 0; i < variables.length; i++) {
                     if (dmg === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
@@ -539,16 +524,8 @@ button1.addEventListener("click", async () => {
                     } 
                 }
             }
-            console.log(dmg)
-            console.log(ehb)
-            console.log(hl)
-            console.log(aq)
-            console.log(ehn)
-            console.log(ssa)
-            console.log(dvs)
-            console.log(agg) 
-    })   
-    
+            
+    })    
    
 })
 

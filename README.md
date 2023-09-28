@@ -27,20 +27,13 @@
 </ol>
 
 
-
-
-
-
-
-
-
-
 <h3>Credits</h3>
 <ul>
 <li>Robert Castor</li>
-<li>Brittany Morataya</li>
-<li>Jeremy Taubman</li>
-<li>Hayk Mnatsakanyan</li>
+<li>Brittany Morataya(leader)</li>
+<li>Jeremy Taubman(helped several times)</li>
+<li>Hayk Mnatsakanyan(helped several times)</li>
+<li>ChatGPT</li>
 </ul>
 
 <h1>Thank you to all that helped me with this project. Your help is greatly appreciated!</h1>
