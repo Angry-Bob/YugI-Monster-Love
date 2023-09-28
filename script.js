@@ -1,7 +1,34 @@
 //Button to initialize game
 const button1 = document.querySelector("#startGame")
+const darkButton = document.querySelector('.darkMode')
+const darkChoice = document.querySelector('#choice0')
+const darkChoice1 = document.querySelector('#choice1')
+const darkChoice2 = document.querySelector('#choice2')
+const imageMatch = document.querySelector('#imageMatch')
+const remove = document.querySelector('#header')
+const remove1 = document.querySelector('#arena')
+const remove2 = document.querySelector('#bottomText')
+const card = document.querySelector('#effect')
+const buttonHome = document.querySelector('#homePage')
+
+buttonHome.addEventListener('click', (e) => {
+    location.reload()
+})
+
+const match = document.querySelector('#match')
+const body = document.querySelector('body')
+darkButton.addEventListener('click', e => {
+    body.setAttribute("class", 'goingDark')
+    darkChoice.setAttribute('class', 'darkChoice')
+    darkChoice1.setAttribute('class', 'darkChoice')
+    darkChoice2.setAttribute('class', 'darkChoice')
+})
+    
 
 
+
+
+let questions;
 let dmg= 0;
 let ehb = 0;
 let hl = 0; 
@@ -14,8 +41,8 @@ let agg = 0;
 let variables = [dmg,ehb,hl,aq,ehn,ssa,dvs,agg]
 
 //Questions as objects in an array for the user to answer
-
-const questions = [
+button1.addEventListener("click", async () => {
+ questions = [
     {
         question: "How would you extend your kindness in a challenging situation?",
         response: [
@@ -190,7 +217,10 @@ const questions = [
 
 //Event listener function that commences upon button1 being pressed
 
-button1.addEventListener("click", async () => {
+
+
+   
+
 
     //API call
     const response = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
@@ -210,25 +240,8 @@ button1.addEventListener("click", async () => {
             host.setAttribute('src', "clipart1246641.png")
         }
     }
-
-
-
-
-    console.log(monstArr[0])
-    console.log(monstArr[1])
-    console.log(monstArr[2])
-    console.log(monstArr[3])
-    console.log(monstArr[4])
-    console.log(monstArr[5])
-    console.log(monstArr[6])
-    console.log(monstArr[7])
-
-
-
-
-
-
-
+    console.log(response2)
+    card.innerHTML = `${response2}`
 
     const question = document.querySelector("#question")
     const choices = Array.from(document.querySelectorAll(".choice"))
@@ -255,277 +268,312 @@ button1.addEventListener("click", async () => {
     choice2.innerHTML = currentQuestion.response[1].answer
     choice3.innerHTML = currentQuestion.response[2].answer
 
+    function addListeners(evt) {
+
     
 
+        let id = evt.target.id[evt.target.id.length - 1]
+    
+        questionIndex = Math.floor(Math.random() * questions.length)   
+        currentQuestion = questions[questionIndex]
+        question.innerHTML = currentQuestion.question
+        choice1.innerHTML = currentQuestion.response[0].answer
+        choice2.innerHTML = currentQuestion.response[1].answer
+        choice3.innerHTML = currentQuestion.response[2].answer
+        questions.splice(questionIndex, 1);
+            
+           
+    
+    
+    
+            
+                if (currentQuestion.question === 'How would you extend your kindness in a challenging situation?') {
+                    if (id === '0') {
+                        dmg += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        dmg += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        dmg += currentQuestion.response[2].value
+                    }
+            
+                }
+                if (currentQuestion.question === 'How do you channel your excitement and passion into your daily life?') {
+                    if (id === '0') {
+                        dmg += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        dmg += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        dmg += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you showcase courage in your life?') {
+                    if (id === '0') {
+                        dmg += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        dmg += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        dmg += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you approach challenging situations in your life?') {
+                    if (id === '0') {
+                        ehb += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ehb += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ehb += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you channel your passion into your interests and activities?') {
+                    if (id === '0') {
+                        ehb += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ehb += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ehb += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you extend your care and support to those around you?') {
+                    if (id === '0') {
+                        ehb += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ehb += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ehb += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you value and express your own independence in daily life?') {
+                    if (id === '0') {
+                        hl += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        hl += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        hl += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you foster and strengthen your relationships with others?') {
+                    if (id === '0') {
+                        hl += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        hl += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        hl += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you showcase grace under pressure and adapt to changes in your life?') {
+                    if (id === '0') {
+                        hl += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        hl += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        hl += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you empower and motivate others in your personal or professional life?') {
+                    if (id === '0') {
+                        aq += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        aq += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        aq += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you demonstrate your commitment to safeguarding and supporting those you care about?') {
+                    if (id === '0') {
+                        aq += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        aq += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        aq += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you exhibit bravery and bounce back from setbacks in your life?') {
+                    if (id === '0') {
+                        aq += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        aq += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        aq += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you cultivate and nourish your relationships with others?') {
+                    if (id === '0') {
+                        ehn += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ehn += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ehn += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you advocate for fairness and stand up for what you believe is right?') {
+                    if (id === '0') {
+                        ehn += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ehn += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ehn += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you maintain focus and keep pushing forward towards your goals?') {
+                    if (id === '0') {
+                        ehn += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ehn += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ehn += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you embrace curiosity and uncover new knowledge in your life?') {
+                    if (id === '0') {
+                        ssa += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ssa += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ssa += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you respond effectively to unexpected situations or changes?') {
+                    if (id === '0') {
+                        ssa += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ssa += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ssa += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you contribute to and strengthen the teams you are a part of?') {
+                    if (id === '0') {
+                        ssa += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        ssa += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        ssa += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you express sophistication and style in your daily life?') {
+                    if (id === '0') {
+                        dvs += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        dvs += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        dvs += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you handle and bounce back from difficult situations?') {
+                    if (id === '0') {
+                        dvs += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        dvs += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        dvs += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you embrace curiosity and the unknown in your life?') {
+                    if (id === '0') {
+                        dvs += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        dvs += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        dvs += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you harness your own strength to overcome challenges in your life?') {
+                    if (id === '0') {
+                        agg += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        agg += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        agg += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you express your creativity and innovative thinking?') {
+                    if (id === '0') {
+                        agg += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        agg += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        agg += currentQuestion.response[2].value
+                    }
+                }
+                if (currentQuestion.question === 'How do you demonstrate loyalty and reliability to your friends, family, or colleagues?') {
+                    if (id === '0') {
+                        agg += currentQuestion.response[0].value
+                    } else if (id === '1') {
+                        agg += currentQuestion.response[1].value
+                    } else if (id === '2') {
+                        agg += currentQuestion.response[2].value
+                    }
+                }
+                console.log(questions.length)
+                if (questions.length === 0) {
+                    for (let i = 0; i < variables.length; i++) {
+                        if (dmg === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            document.getElementById('match').style.display = 'flex'
+                            imageMatch.setAttribute('src', monstArr[2])
+                        } else if (ehb === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            document.getElementById('match').style.display = 'flex'
+                            imageMatch.setAttribute('src', monstArr[4])
+                        } else if (hl === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            imageMatch.setAttribute('src', monstArr[6])
+                            document.getElementById('match').style.display = 'flex'
+                        } else if (aq === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            imageMatch.setAttribute('src', monstArr[0])
+                            document.getElementById('match').style.display = 'flex'
+                        } else if (ehn === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            imageMatch.setAttribute('src', monstArr[5])
+                            document.getElementById('match').style.display = 'flex'
+                        } else if (ssa === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            imageMatch.setAttribute('src', monstArr[7])
+                            document.getElementById('match').style.display = 'flex'
+                        } else if (dvs === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            imageMatch.setAttribute('src', monstArr[3])
+                            document.getElementById('match').style.display = 'flex'
+                        } else if (agg === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
+                            remove.remove()
+                            remove1.remove()
+                            remove2.remove()
+                            imageMatch.setAttribute('src', monstArr[1])
+                            document.getElementById('match').style.display = 'flex'
+                        } 
+                    }
+                }
+    
+                
+                
+        }  
+
     ansButton = document.querySelectorAll(".choice")
-
-
-    console.log(currentQuestion)
-
-    let variables = [dmg,ehb,hl,aq,ehn,ssa,dvs,agg]
+    
+    
 
 
 
     // Hayk assisted me with the code below, thanks Hayk
     choices.forEach(choice => {
-    choice.addEventListener("click", evt => {
-
-    let id = evt.target.id[evt.target.id.length - 1]
-
-    questionIndex = Math.floor(Math.random() * questions.length)   
-    currentQuestion = questions[questionIndex]
-    question.innerHTML = currentQuestion.question
-    choice1.innerHTML = currentQuestion.response[0].answer
-    choice2.innerHTML = currentQuestion.response[1].answer
-    choice3.innerHTML = currentQuestion.response[2].answer
-    questions.splice(questionIndex, 1);
-        
-       
-
-
-
-        
-            if (currentQuestion.question === 'How would you extend your kindness in a challenging situation?') {
-                if (id === '0') {
-                    dmg += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    dmg += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    dmg += currentQuestion.response[2].value
-                }
-        
-            }
-            if (currentQuestion.question === 'How do you channel your excitement and passion into your daily life?') {
-                if (id === '0') {
-                    dmg += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    dmg += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    dmg += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you showcase courage in your life?') {
-                if (id === '0') {
-                    dmg += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    dmg += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    dmg += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you approach challenging situations in your life?') {
-                if (id === '0') {
-                    ehb += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ehb += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ehb += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you channel your passion into your interests and activities?') {
-                if (id === '0') {
-                    ehb += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ehb += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ehb += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you extend your care and support to those around you?') {
-                if (id === '0') {
-                    ehb += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ehb += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ehb += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you value and express your own independence in daily life?') {
-                if (id === '0') {
-                    hl += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    hl += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    hl += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you foster and strengthen your relationships with others?') {
-                if (id === '0') {
-                    hl += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    hl += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    hl += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you showcase grace under pressure and adapt to changes in your life?') {
-                if (id === '0') {
-                    hl += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    hl += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    hl += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you empower and motivate others in your personal or professional life?') {
-                if (id === '0') {
-                    aq += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    aq += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    aq += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you demonstrate your commitment to safeguarding and supporting those you care about?') {
-                if (id === '0') {
-                    aq += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    aq += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    aq += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you exhibit bravery and bounce back from setbacks in your life?') {
-                if (id === '0') {
-                    aq += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    aq += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    aq += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you cultivate and nourish your relationships with others?') {
-                if (id === '0') {
-                    ehn += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ehn += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ehn += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you advocate for fairness and stand up for what you believe is right?') {
-                if (id === '0') {
-                    ehn += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ehn += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ehn += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you maintain focus and keep pushing forward towards your goals?') {
-                if (id === '0') {
-                    ehn += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ehn += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ehn += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you embrace curiosity and uncover new knowledge in your life?') {
-                if (id === '0') {
-                    ssa += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ssa += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ssa += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you respond effectively to unexpected situations or changes?') {
-                if (id === '0') {
-                    ssa += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ssa += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ssa += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you contribute to and strengthen the teams you are a part of?') {
-                if (id === '0') {
-                    ssa += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    ssa += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    ssa += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you express sophistication and style in your daily life?') {
-                if (id === '0') {
-                    dvs += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    dvs += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    dvs += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you handle and bounce back from difficult situations?') {
-                if (id === '0') {
-                    dvs += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    dvs += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    dvs += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you embrace curiosity and the unknown in your life?') {
-                if (id === '0') {
-                    dvs += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    dvs += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    dvs += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you harness your own strength to overcome challenges in your life?') {
-                if (id === '0') {
-                    agg += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    agg += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    agg += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you express your creativity and innovative thinking?') {
-                if (id === '0') {
-                    agg += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    agg += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    agg += currentQuestion.response[2].value
-                }
-            }
-            if (currentQuestion.question === 'How do you demonstrate loyalty and reliability to your friends, family, or colleagues?') {
-                if (id === '0') {
-                    agg += currentQuestion.response[0].value
-                } else if (id === '1') {
-                    agg += currentQuestion.response[1].value
-                } else if (id === '2') {
-                    agg += currentQuestion.response[2].value
-                }
-            }
-            
-            if (questions.length === 0) {
-                for (let i = 0; i < variables.length; i++) {
-                    if (dmg === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[2])
-                    } else if (ehb === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[4])
-                    } else if (hl === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[6])
-                    } else if (aq === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[0])
-                    } else if (ehn === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[5])
-                    } else if (ssa === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[7])
-                    } else if (dvs === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[3])
-                    } else if (agg === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
-                        weevil.setAttribute('src', monstArr[1])
-                    } 
-                }
-            }
-            
-    })    
+    choice.addEventListener("click", addListeners)
+    
+    
    
 })
 

@@ -3,6 +3,34 @@
     justify-content: center;
     background-position: center;    
 }
+.darkMode {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 5px;
+}
+.goingDark {
+    background-color: rgba(13, 13, 20, 0.8);
+    color: lightgray;
+
+}
+.darkChoice {
+    background-color: rgb(12, 96, 96);
+    color: lightgray;
+    display: flex;
+    font-family: 'Martian Mono', monospace;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    height: 20%;
+    border: none;
+    font-size: 10px;
+    width: 100%;
+    margin: 5px auto;
+}
+
+
+
 h2 {
     font-family: 'Mukta', sans-serif;
 }
@@ -13,7 +41,7 @@ body {
     text-align: center;
     font-size: 15px;
     margin: auto;
-    height: 0vh;
+    height: 5vh;
     padding-bottom: 20%;
     width: 100%;
 }
@@ -139,22 +167,39 @@ img {
     border-radius: 10%;
     border: none;
 }
+#effect {
+    background-color: rgb(128, 66, 0);
+    width: 95%;
+    height: 80%;
+    margin-bottom: 5px;
+}
 #match {
     display: none;
-    position: absolute;
+    align-items: center;
+    position: flex;
     border: 2px solid pink;
-    background-color: beige;
-    height: 50%;
-    width: 50%;
-    top: 25vh;
-    left: 25vw;
+    background-color: darkcyan;
+    flex-direction: column;
+    height: 400px;
+    width: 250px;
+    
+    
+    padding: 30px 15px 15px 15px;
+}
+#imageMatch {
+    
+    margin-bottom: 20px;
+    height: 60%;
+    width: 95%;
 }
 
 .iveneverbeentospan {
     font-family: 'Mukta', sans-serif;
-    color: black;
+    color: red
 }
+#effect {
 
+}
 @media screen and (max-width: 480px) {
     #header {
       height: 5vh;
