@@ -1,12 +1,10 @@
-
-
-
 :root {
     display: flex;
     justify-content: center;
-    background-position: center;
-    
-    
+    background-position: center;    
+}
+h2 {
+    font-family: 'Mukta', sans-serif;
 }
 body {
     max-width: 500px;
@@ -87,6 +85,7 @@ img {
 }
 
 #question {
+    font-family: 'Mukta', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
