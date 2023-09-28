@@ -9,8 +9,9 @@
 
 #header {
     text-align: center;
+    font-size: 10px;
     margin: auto;
-    height: 20vh;
+    height: 10vh;
     padding-bottom: 10%;
     width: 100%;
 }
@@ -20,16 +21,14 @@
     justify-content: space-around;
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlu3y7OlQOjQ9fCdKOMikGFQsGjWpTb7kk3A&usqp=CAU);
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-
     align-items: center;
-    height: 40vh;
-    width: 80vw
+    height: 30vh;
+    width: 100vw
     
 }
-button {
-    height: 20px;
-}
+
 button:hover {
     transition: transform 100ms;
     transform: scale(1.04);
@@ -91,10 +90,11 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
+    font-weight: 200;
     background-color: gold;
     height: 25%;
     border: none;
+    font-size: 6px;
     width: 100%;
 
     margin: 5px auto;
