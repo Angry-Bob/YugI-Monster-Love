@@ -27,6 +27,8 @@
     <li>Next, press "Retry?", to play again</li>
 </ol>
 
+<h3>Original Wireframe Idea</h3>
+<img src="Screenshot 2023-09-29 at 7.51.50 AM.png">
 
 <h3>Credits</h3>
 <ul>
