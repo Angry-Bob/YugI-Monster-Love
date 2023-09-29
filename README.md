@@ -6,7 +6,7 @@
 <h1>Yugi, to be my sweetheart!!!</h1>
 
 
-<p>What is love? Will this question ever be answered? No, no it wil not. However, You can take my Yu-Gi-Oh! monster match test to see with sexy monster you would pair best.</p>
+<p>What is love? Will this question ever be answered? No, no it wil not. However, You can take my Yu-Gi-Oh! monster match test to see with which sexy monster you would pair best.</p>
 
 
 <img src="kisspng-yugi-mutou-yami-yugi-yu-gi-oh-duel-links-yu-gi-oh-yu-5addf130a789d7.3981810715244946406863.png">
