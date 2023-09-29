@@ -230,18 +230,22 @@ button1.addEventListener("click", async () => {
     const host = document.querySelector(".hostBox")
     const weevil = document.querySelector(".weevil")
     const monstArr = []
+    const desc = []
     const response2 = response.data.data
     // For loop that grabs the specific data I wan and stores it in an array
     for (let i = 0; i < response2.length; i++) {
         if (response2[i].name === 'Dark Magician Girl' || response2[i].name === 'Harpie Lady' || response2[i].name === 'Elemental HERO Burstinatrix' || response2[i].name === 'Amazoness Queen' || response2[i].name === 'Elemental HERO Neos' || response2[i].name === 'SPYRAL Super Agent' || response2[i].name === 'Dhampir Vampire Sheridan' || response2[i].name === 'Ancient Gear Golem') {
             x = response2[i].card_images[0].image_url_cropped
+            y = response2[i].desc
+            desc.push(y)
             monstArr.push(x)
             weevil.setAttribute('src', "clipart905265.png")
             host.setAttribute('src', "clipart1246641.png")
         }
     }
-    console.log(response2)
-    card.innerHTML = `${response2}`
+    console.log(desc)
+    
+    card.innerHTML = `${response2.name}`
 
     const question = document.querySelector("#question")
     const choices = Array.from(document.querySelectorAll(".choice"))
@@ -504,7 +508,7 @@ button1.addEventListener("click", async () => {
                         agg += currentQuestion.response[2].value
                     }
                 }
-                console.log(questions.length)
+                console.log(response2)
                 if (questions.length === 0) {
                     for (let i = 0; i < variables.length; i++) {
                         if (dmg === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
@@ -513,48 +517,56 @@ button1.addEventListener("click", async () => {
                             remove2.remove()
                             document.getElementById('match').style.display = 'flex'
                             imageMatch.setAttribute('src', monstArr[2])
+                            card.innerHTML = `${desc[2]}`
                         } else if (ehb === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
                             remove.remove()
                             remove1.remove()
                             remove2.remove()
                             document.getElementById('match').style.display = 'flex'
                             imageMatch.setAttribute('src', monstArr[4])
+                            card.innerHTML = `${desc[4]}`
                         } else if (hl === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
                             remove.remove()
                             remove1.remove()
                             remove2.remove()
                             imageMatch.setAttribute('src', monstArr[6])
                             document.getElementById('match').style.display = 'flex'
+                            card.innerHTML = `${desc[6]}`
                         } else if (aq === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
                             remove.remove()
                             remove1.remove()
                             remove2.remove()
                             imageMatch.setAttribute('src', monstArr[0])
                             document.getElementById('match').style.display = 'flex'
+                            card.innerHTML = `${desc[0]}`
                         } else if (ehn === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
                             remove.remove()
                             remove1.remove()
                             remove2.remove()
                             imageMatch.setAttribute('src', monstArr[5])
                             document.getElementById('match').style.display = 'flex'
+                            card.innerHTML = `${desc[5]}`
                         } else if (ssa === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
                             remove.remove()
                             remove1.remove()
                             remove2.remove()
                             imageMatch.setAttribute('src', monstArr[7])
                             document.getElementById('match').style.display = 'flex'
+                            card.innerHTML = `${desc[7]}`
                         } else if (dvs === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
                             remove.remove()
                             remove1.remove()
                             remove2.remove()
                             imageMatch.setAttribute('src', monstArr[3])
                             document.getElementById('match').style.display = 'flex'
+                            card.innerHTML = `${desc[3]}`
                         } else if (agg === Math.max(dmg,ehb,hl,aq,ehn,ssa,dvs,agg)) {
                             remove.remove()
                             remove1.remove()
                             remove2.remove()
                             imageMatch.setAttribute('src', monstArr[1])
                             document.getElementById('match').style.display = 'flex'
+                            card.innerHTML = `${desc[1]}`
                         } 
                     }
                 }

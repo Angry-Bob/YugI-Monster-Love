@@ -168,26 +168,30 @@ img {
     border: none;
 }
 #effect {
-    background-color: rgb(128, 66, 0);
+    background-color: blanchedalmond;
     width: 95%;
     height: 80%;
     margin-bottom: 5px;
+}
+#homePage {
+    border: none;
+    background-color: blanchedalmond;
 }
 #match {
     display: none;
     align-items: center;
     position: flex;
-    border: 2px solid pink;
-    background-color: darkcyan;
+    border: 2px solid darkmagenta;
+    background-color: tan;
     flex-direction: column;
-    height: 400px;
+    height: 500px;
     width: 250px;
     
     
     padding: 30px 15px 15px 15px;
 }
 #imageMatch {
-    
+    border: 2px solid black;
     margin-bottom: 20px;
     height: 60%;
     width: 95%;
@@ -195,10 +199,13 @@ img {
 
 .iveneverbeentospan {
     font-family: 'Mukta', sans-serif;
-    color: red
+    color: red;
 }
 #effect {
+    border: 2px solid black;
+    font-size: small;
 
+    font-family: 'Mukta', sans-serif;
 }
 @media screen and (max-width: 480px) {
     #header {
