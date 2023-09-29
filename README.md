@@ -23,7 +23,8 @@
 
 <h2>How to get started</h2>
 <ol>
-    <li>Press  "Begin Duel!"<h1>
+    <li>Press  "Begin Duel!"</li>
+    <li>Next, press "Retry?", to play again</li>
 </ol>
 
 
